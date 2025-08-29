@@ -1,104 +1,136 @@
-# Chat-X 🤖 (RAG with Django, OpenAI & LangChain)
+Chat-X 🤖 (RAG with Django, DRF, OpenAI & LangChain)
 
-Chat-X is an **ongoing Django project** that uses **OpenAI** and **LangChain** to build a **Retrieval-Augmented Generation (RAG) chatbot**.  
+Chat-X is an ongoing Django project that uses OpenAI and LangChain to build a Retrieval-Augmented Generation (RAG) chatbot.
 
-In simple words:  
-This chatbot can read documents, remember them, and use AI to answer questions with context from your data — all served through a Django web app.
+It consists of:
 
----  
+Backend: Django + Django REST Framework (DRF) serving APIs
 
-This is not finished — it’s a **work in progress** and **open for contributions**.
+Frontend: Angular SPA (fe/ folder) for interacting with the chatbot
 
----
+In simple terms:
+This chatbot can read documents, remember them, and answer questions using AI with context from your data — served through a web frontend.
 
-## ✨ Features (planned)
-- Upload documents (PDFs, text, etc.)  
-- Store document knowledge in a vector database  
-- Ask natural language questions through a chat page  
-- Get AI answers grounded in your documents (not just guesses)  
+✨ Features (planned)
 
----
+Upload documents (PDFs, text, etc.)
 
-## 🛠️ Requirements
-- Python 3.9+  
-- Django  
-- LangChain  
-- OpenAI account & API key  
-- Git  
+Store document knowledge in a vector database
 
----
+Ask natural language questions through a chat page
 
-## 🚀 Getting Started
+Get AI answers grounded in your documents (not just guesses)
 
-1. **Clone the project**
-   ```powershell
-   git clone https://github.com/CHepplethwaite/chat-x.git
-   cd chat-x
-Set up virtual environment
+Frontend consumes DRF APIs for chat, user management, and document handling
 
-powershell
-Copy code
+🛠️ Requirements
+
+Backend:
+
+Python 3.9+
+
+Django 5.2+
+
+Django REST Framework
+
+LangChain
+
+OpenAI account & API key
+
+Git
+
+Frontend:
+
+Node.js 18+
+
+npm or Yarn
+
+Angular CLI
+
+🚀 Getting Started
+1. Clone the project
+git clone https://github.com/CHepplethwaite/chat-x.git
+cd chat-x
+
+2. Backend Setup (Django + DRF)
 python -m venv .venv
 .\.venv\Scripts\Activate
-Install dependencies
-
-powershell
-Copy code
 pip install -r requirements.txt
-Add your OpenAI key
-Create a file called .env in the project root:
 
-ini
-Copy code
+
+Add your OpenAI key:
+Create a .env file in the project root:
+
 OPENAI_API_KEY=sk-your-key-here
-Run the server
 
-powershell
-Copy code
+
+Apply migrations and run the server:
+
 python manage.py migrate
 python manage.py runserver
-Visit 👉 http://127.0.0.1:8000/
 
-💬 Testing
-Right now the chatbot is basic. Once document ingestion is added, you’ll be able to upload files and ask:
+
+Backend API base URL will be available at:
+
+http://127.0.0.1:8000/api/
+
+3. Frontend Setup (Angular SPA)
+cd fe
+npm install
+ng serve
+
+
+Frontend runs at:
+
+http://localhost:4200
+
+
+Update API URLs in src/environments/environment.ts to point to Django DRF endpoints.
+
+💬 Testing the Chatbot
+
+Currently, you can test the chatbot by asking questions:
 
 "What does the document say about climate change?"
-The chatbot will:
 
-Search your document knowledge.
 
-Pick the most relevant text.
+The workflow:
 
-Use OpenAI (via LangChain) to give an answer based on that text.
+Search document knowledge via DRF API
+
+Pick relevant text
+
+Generate AI answer with OpenAI via LangChain
 
 🤝 How to Contribute
-We welcome contributions from everyone!
 
-You can help by:
+We welcome contributions! You can help by:
 
-Writing Django code
-
-Integrating LangChain components
+Writing Django/DRF code
 
 Adding document loaders and vector stores
 
-Designing the chat UI
+Integrating Angular frontend components
 
-Improving docs and examples
+Improving UX/UI for chat and uploads
 
-Steps to contribute
-Fork this repo
+Updating docs and examples
+
+Steps:
+
+Fork the repo
 
 Create a branch
 
-Make your changes
+Make changes
 
 Open a Pull Request
 
 📢 Open Invitation
+
 This is an open-source, community-driven project.
-Beginners and experts are both welcome. If you’re curious about Django, LangChain, or AI chatbots, this is a good project to learn and contribute to.
+Beginners and experts are welcome. Learn and contribute to Django, DRF, Angular, LangChain, and AI chatbots.
 
-Let’s build Chatbot-X together 🚀
+Let’s build Chat-X together 🚀
 
-Made with ❤️ using Django + OpenAI + LangChain
+Made with ❤️ using Django + DRF + Angular + OpenAI + LangChain
