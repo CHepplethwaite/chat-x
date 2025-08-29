@@ -1,4 +1,4 @@
-# Chatbot-X 🤖 (RAG with Django, OpenAI & LangChain)
+# Chat-X 🤖 (RAG with Django, OpenAI & LangChain)
 
 Chat-X is an **ongoing Django project** that uses **OpenAI** and **LangChain** to build a **Retrieval-Augmented Generation (RAG) chatbot**.  
 
