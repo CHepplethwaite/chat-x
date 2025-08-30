@@ -89,9 +89,7 @@ Update API URLs in src/environments/environment.ts to point to Django DRF endpoi
 
 💬 Testing the Chatbot
 
-Currently, you can test the chatbot by asking questions:
-
-"What does the document say about climate change?"
+You can test the chatbot by asking questions.
 
 
 The workflow:
